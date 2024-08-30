@@ -61,7 +61,7 @@ function main()
 end
 
 function cmd_help(arg)
-	sampAddChatMessage(u8:decode("{7fff6e}А ничу на нармальна абщайся ч0рт"), main_color)
+	sampAddChatMessage(u8:decode("{7fff6e}А ничу на нармальна абщайся"), main_color)
 end
 
 function cmd_radiomn(arg)

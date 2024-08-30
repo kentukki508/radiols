@@ -2,7 +2,7 @@ scriptname = "Radio Los-Santos"
 script_name(scriptname) -- название скрипта
 author_value = "D.Bianchi & T.Henderson"
 script_author(author_value) -- автор скрипта
-version_value = "1.4"
+version_value = "1.1"
 script_version(version_value) -- версия скрипта
 script_description[[
 Онлайн радио для Advance RolePlay [Blue Server] в GTA SA:MP

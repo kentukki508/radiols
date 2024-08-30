@@ -33,7 +33,7 @@ if enable_autoupdate then
         if autoupdate_loaded then
             Update.json_url = "https://raw.githubusercontent.com/kentukki508/radiols/main/autoupdate/versioninfo.json?" .. tostring(os.clock())
             Update.prefix = "[" .. string.upper(thisScript().name) .. "]: "
-            Update.url = "https://github.com/kentukki508/autoupdate/radiols.lua/"
+            Update.url = "https://github.com/kentukki508/radiols/blob/main/autoupdate/radiols.lua"
         end
     end
 end
@@ -47,7 +47,7 @@ function main()
 
 	-- логи о запуске
 	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - " .. scriptname .. " {d5dedd}успешно загружен. | {7fff6e}Версия: {d5dedd}" .. version_value .. " | {7fff6e}Автор: {d5dedd}" .. author_value), main_color)
-	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - 1234 Для получения помощи используйте: {d5dedd}/rls_help"), main_color)
+	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - Для получения помощи используйте: {d5dedd}/rls_help"), main_color)
 	print("Успешный запуск скрипта.")
 
 	if autoupdate_loaded and enable_autoupdate and Update then

@@ -51,7 +51,7 @@ function main()
 	print("Успешный запуск скрипта.")
 
 	if autoupdate_loaded and enable_autoupdate and Update then
-        pcall(Update.check, Update.json_url, Update.prefix, Update.url)
+        	pcall(Update.check, Update.json_url, Update.prefix, Update.url)
 	end
 	
 	while true do

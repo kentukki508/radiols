@@ -46,7 +46,7 @@ function main()
 	sampRegisterChatCommand("rls_mn", cmd_radiomn) -- регистрация команды
 
 	-- логи о запуске
-	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - " .. scriptname .. " {d5dedd}успешно загружен. | {7fff6e}Версия: {d5dedd}" .. version_value .. " | {7fff6e}Автор: {d5dedd}" .. author_value), main_color)
+	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - " .. scriptname .. " {d5dedd}успешныфыццо загружен. | {7fff6e}Версия: {d5dedd}" .. version_value .. " | {7fff6e}Автор: {d5dedd}" .. author_value), main_color)
 	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - Для получения помощи используйте: {d5dedd}/rls_help"), main_color)
 	print("Успешный запуск скрипта.")
 

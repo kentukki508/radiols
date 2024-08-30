@@ -2,7 +2,7 @@ scriptname = "Radio Los-Santos"
 script_name(scriptname) -- название скрипта
 author_value = "D.Bianchi & T.Henderson"
 script_author(author_value) -- автор скрипта
-version_value = "1.3"
+version_value = "1.2"
 script_version(version_value) -- версия скрипта
 script_description[[
 Онлайн радио для Advance RolePlay [Blue Server] в GTA SA:MP
@@ -51,7 +51,7 @@ function main()
 	print("Успешный запуск скрипта.")
 
 	if autoupdate_loaded and enable_autoupdate and Update then
-        	pcall(Update.check, Update.json_url, Update.prefix, Update.url)
+        pcall(Update.check, Update.json_url, Update.prefix, Update.url)
 	end
 	
 	while true do

@@ -2,7 +2,7 @@ scriptname = "Radio Los-Santos"
 script_name(scriptname) -- название скрипта
 author_value = "D.Bianchi & T.Henderson"
 script_author(author_value) -- автор скрипта
-version_value = "1.1"
+version_value = "1.0"
 script_version(version_value) -- версия скрипта
 script_description[[
 Онлайн радио для Advance RolePlay [Blue Server] в GTA SA:MP
@@ -49,6 +49,10 @@ function main()
 	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - " .. scriptname .. " {d5dedd}успешно загружен. | {7fff6e}Версия: {d5dedd}" .. version_value .. " | {7fff6e}Автор: {d5dedd}" .. author_value), main_color)
 	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - Для получения помощи используйте: {d5dedd}/rls_help"), main_color)
 	print("Успешный запуск скрипта.")
+
+	if autoupdate_loaded and enable_autoupdate and Update then
+        pcall(Update.check, Update.json_url, Update.prefix, Update.url)
+    end
 
 	while true do
 		wait(0)

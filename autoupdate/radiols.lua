@@ -2,7 +2,7 @@ scriptname = "Radio Los-Santos"
 script_name(scriptname) -- название скрипта
 author_value = "D.Bianchi & T.Henderson"
 script_author(author_value) -- автор скрипта
-version_value = "1.5"
+version_value = "1.1"
 script_version(version_value) -- версия скрипта
 script_description[[
 Онлайн радио для Advance RolePlay [Blue Server] в GTA SA:MP
@@ -31,9 +31,9 @@ if enable_autoupdate then
     if updater_loaded then
         autoupdate_loaded, Update = pcall(Updater)
         if autoupdate_loaded then
-            Update.json_url = "https://raw.githubusercontent.com/kentukki508/radiols/main/autoupdate/versioninfo.json?" .. tostring(os.clock())
-            --Update.prefix = "[" .. string.upper(thisScript().name) .. "]: "
-            Update.url = "https://github.com/kentukki508/radiols/"
+            Update.json_url = "https://raw.githubusercontent.com/winsdens/languagehelper_samp/main/autoupdate/versioninfo.json?" .. tostring(os.clock())
+            Update.prefix = "[" .. string.upper(thisScript().name) .. "]: "
+            Update.url = "https://github.com/winsdens/languagehelper_samp/"
         end
     end
 end
@@ -50,10 +50,6 @@ function main()
 	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - Для получения помощи используйте: {d5dedd}/rls_help"), main_color)
 	print("Успешный запуск скрипта.")
 
-	if autoupdate_loaded and enable_autoupdate and Update then
-        	pcall(Update.check, Update.json_url, Update.prefix, Update.url)
-	end
-	
 	while true do
 		wait(0)
 	end
@@ -65,17 +61,17 @@ function cmd_help(arg)
 end
 
 function cmd_radiomn(arg)
-    --enabled = not enabled
+    enabled = not enabled
     radio_on()
 end
 
 function radio_on(arg)
-	enabled = not enabled
 	if enabled then
 	    if isPlayerPlaying(playerHandle) then
 			local audio = loadAudioStream("https://drh-connect.dline-media.com/bluefederation")
-			setAudioStreamState(audio, 1)
+			setAudioStreamState(audio, ASState.PLAY)
 			setAudioStreamVolume(audio, 1)
 		end
 	end
+	enabled = not enabled
 end

@@ -33,7 +33,7 @@ if enable_autoupdate then
         if autoupdate_loaded then
             Update.json_url = "https://raw.githubusercontent.com/kentukki508/radiols/main/autoupdate/versioninfo.json?" .. tostring(os.clock())
             Update.prefix = "[" .. string.upper(thisScript().name) .. "]: "
-            Update.url = "https://github.com/kentukki508/radiols/blob/main/autoupdate/radiols.lua"
+            Update.url = "https://github.com/kentukki508/radiols/autoupdate/radiols.lua"
         end
     end
 end

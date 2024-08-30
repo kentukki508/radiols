@@ -46,9 +46,32 @@ function main()
 	sampRegisterChatCommand("rls_mn", cmd_radiomn) -- регистрация команды
 
 	-- логи о запуске
+	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - " .. scriptname .. " {d5dedd}успешно загружен. | {7fff6e}Версия: {d5dedd}" .. version_value .. " | {7fff6e}Автор: {d5dedd}" .. author_value), main_color)
+	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - Для получения помощи используйте: {d5dedd}/rls_help"), main_color)
+	print("Успешный запуск скрипта.")
 
 	while true do
 		wait(0)
 	end
 
+end
+
+function cmd_help(arg)
+	sampAddChatMessage(u8:decode("{7fff6e}А ничу на нармальна абщайся"), main_color)
+end
+
+function cmd_radiomn(arg)
+    --enabled = not enabled
+    radio_on()
+end
+
+function radio_on(arg)
+	enabled = not enabled
+	if enabled then
+	    if isPlayerPlaying(playerHandle) then
+			local audio = loadAudioStream("https://drh-connect.dline-media.com/bluefederation")
+			setAudioStreamState(audio, 1)
+			setAudioStreamVolume(audio, 1)
+		end
+	end
 end

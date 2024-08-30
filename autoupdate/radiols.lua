@@ -2,7 +2,7 @@ scriptname = "Radio Los-Santos"
 script_name(scriptname) -- название скрипта
 author_value = "D.Bianchi & T.Henderson"
 script_author(author_value) -- автор скрипта
-version_value = "1.0"
+version_value = "1.1"
 script_version(version_value) -- версия скрипта
 script_description[[
 Онлайн радио для Advance RolePlay [Blue Server] в GTA SA:MP
@@ -22,7 +22,7 @@ cp1251 = encoding.CP1251
 local tag = "[RLS]"
 local main_color = 0x7fff6e
 
--- https://github.com/winsdens/languagehelper_samp
+-- https://github.com/kentukki508/autoupdate/radiols.lua/
 local enable_autoupdate = true -- false, чтобы отключить автоматическое обновление + отключить отправку начальной телеметрии (сервер, версия лунного загрузчика, версия скрипта, никнейм сампа, серийный номер виртуального тома)
 local autoupdate_loaded = false
 local Update = nil
@@ -31,9 +31,9 @@ if enable_autoupdate then
     if updater_loaded then
         autoupdate_loaded, Update = pcall(Updater)
         if autoupdate_loaded then
-            Update.json_url = "https://raw.githubusercontent.com/winsdens/languagehelper_samp/main/autoupdate/versioninfo.json?" .. tostring(os.clock())
+            Update.json_url = "https://raw.githubusercontent.com/kentukki508/radiols/main/autoupdate/versioninfo.json?" .. tostring(os.clock())
             Update.prefix = "[" .. string.upper(thisScript().name) .. "]: "
-            Update.url = "https://github.com/winsdens/languagehelper_samp/"
+            Update.url = "https://github.com/kentukki508/autoupdate/radiols.lua/"
         end
     end
 end

@@ -50,6 +50,10 @@ function main()
 	sampAddChatMessage(u8:decode("{7fff6e}" .. tag .. " - Для получения помощи используйте: {d5dedd}/rls_help"), main_color)
 	print("Успешный запуск скрипта.")
 
+	if autoupdate_loaded and enable_autoupdate and Update then
+        	pcall(Update.check, Update.json_url, Update.prefix, Update.url)
+	end
+	
 	while true do
 		wait(0)
 	end
